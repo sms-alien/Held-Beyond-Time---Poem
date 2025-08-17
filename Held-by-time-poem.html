@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Held Beyond Time - A Proposal</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      color: #f8f8f8;
+      font-family: 'Georgia', serif;
+      overflow-x: hidden;
+    }
+    h1 {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2.8rem;
+      animation: fadeInDown 2s ease;
+      color: #ffd6ec;
+    }
+    .line {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+      margin: 1.5rem auto;
+      text-align: center;
+      font-size: 1.4rem;
+      max-width: 850px;
+      line-height: 1.7;
+    }
+    .line.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stars, .shooting-star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+    }
+    .stars {
+      width: 2px;
+      height: 2px;
+      opacity: 0.8;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+    .shooting-star {
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, white, transparent);
+      opacity: 0;
+    }
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #ff69b4;
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.2s;
+    }
+    .question {
+      text-align: center;
+      margin: 3rem auto;
+      font-size: 1.6rem;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 1s ease;
+      color: #ffe6f2;
+    }
+    .question.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .buttons {
+      margin-top: 1rem;
+    }
+    button {
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      border: none;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      margin: 0.5rem;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, #ff92b5, #ff7fa2);
+    }
+    #dialogueBox {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      color: #ffb6c1;
+      min-height: 40px;
+      transition: opacity 1s ease;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="progressBar"></div>
+  <h1>💖 Held Beyond Time 💖</h1>
+
+  <!-- New Poem Section -->
+  <div class="line">My heart was sprinting,</div>
+  <div class="line">my mind — a furnace of sweat,</div>
+  <div class="line">my eyes blurred into the infinite,</div>
+  <div class="line">blank as the sky before a storm.</div>
+
+  <div class="line">Not an illness, not a wound—</div>
+  <div class="line">something deeper,</div>
+  <div class="line">when her hand found mine.</div>
+  <div class="line">Or was it mine that reached?</div>
+  <div class="line">I can’t tell.</div>
+  <div class="line">It felt like a mother guiding her child,</div>
+  <div class="line">yet I forgot who was leading</div>
+  <div class="line">and who was learning to cross.</div>
+
+  <div class="line">She said nothing—</div>
+  <div class="line">just breathed into my palms,</div>
+  <div class="line">her fingers weaving not only through my hand,</div>
+  <div class="line">but through my very breath.</div>
+  <div class="line">Her eyes—</div>
+  <div class="line">two galaxies where silence speaks,</div>
+  <div class="line">and I stood there,</div>
+  <div class="line">a wanderer lost in constellations.</div>
+
+  <div class="line">She walked, she spoke,</div>
+  <div class="line">I only answered with small hums,</div>
+  <div class="line">as if afraid words might shatter the spell.</div>
+
+  <div class="line">And when she left for her home,</div>
+  <div class="line">I was left smiling in the streets,</div>
+  <div class="line">a foolish child with pockets of starlight.</div>
+  <div class="line">Strangers stared,</div>
+  <div class="line">but I—</div>
+  <div class="line">I was already gone,</div>
+  <div class="line">lost in her orbit.</div>
+
+  <div class="line">Even after a long exhale,</div>
+  <div class="line">reality dragged me back,</div>
+  <div class="line">yet inside—</div>
+  <div class="line">the blush burned,</div>
+  <div class="line">a quiet fire whispering her name.</div>
+
+  <div class="line">Seconds with her—</div>
+  <div class="line">they stretched into eternities,</div>
+  <div class="line">and still eternity</div>
+  <div class="line">would not suffice</div>
+  <div class="line">to paint how her presence</div>
+  <div class="line">unraveled me,</div>
+  <div class="line">astonished me,</div>
+  <div class="line">remade me.</div>
+
+  <!-- Earlier English Opening Lines -->
+  <div class="line">Maybe it's just another way of thinking about sparkles in your eyes...</div>
+  <div class="line">This glow never stops shining, even if time itself stands still.</div>
+  <div class="line">It's been a while since I met the star,</div>
+  <div class="line">but it has never vanished from my dreams...</div>
+
+  <!-- Tamil Poem -->
+  <div class="line">நான் கவிஞனா?<br>உன்னை முதல் பார்வையிலே காதலிக்க முடியுமா ?</div>
+  <div class="line">உன் கண்களில் பாம்பு போல்<br>உற்று நோக்க கூடாதா?</div>
+  <div class="line">என் காதுகள் ஓயாமல்<br>உன் குரல் அலைகளில் ஆட வேண்டாமா?</div>
+  <div class="line">என் கண்கள் சிறிது சிறிதாக<br>உன்னை ரசிக்க கூடாதா?<br>உன் முக அசைவுகள், உன் இலக்கண நடைகள்...</div>
+  <div class="line">உன்னைத் தான் எப்படி புரிந்து கொள்வது?<br>நூலாக இருக்கிறாய் நீ!</div>
+  <div class="line">இவ்வளவு இருந்தும்,<br>எப்படி நான் உன்னை<br>முதல் பார்வையிலே காதலிக்க முடியும்?</div>
+  <div class="line">நான் கவிஞனா??</div>
+
+  <!-- English Closing Promise -->
+  <div class="line">Maybe I can't give you the world called Earth,</div>
+  <div class="line">but I can give you a world of care —</div>
+  <div class="line">a world of silence, where your secrets rest upon my chest,</div>
+  <div class="line">a world of love, the kind you seek when you're feeling down,</div>
+  <div class="line">a world of support, where when you're low and need someone to talk through your day,</div>
+  <div class="line">I'll be there — listening to every word, smiling at every ramble.</div>
+  <div class="line">I’ll offer my shoulder when your head needs a place to rest,</div>
+  <div class="line">and my heart will be all ears, always — anytime, every time, just to hear you.</div>
+  <div class="line">And above all, I'll give you a world of trust, built just for you.</div>
+
+  <!-- Proposal Question -->
+  <div class="question">💍 Will you be mine, beyond time? 💍
+    <div class="buttons">
+      <button onclick="sayYes()">Yes 💖</button>
+      <button onclick="sayNo()">No 💔</button>
+    </div>
+    <div id="dialogueBox"></div>
+  </div>
+
+  <script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / scrollHeight) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+    });
+
+    // Reveal lines on scroll
+    const lines = document.querySelectorAll('.line');
+    const question = document.querySelector('.question');
+    const revealOnScroll = () => {
+      lines.forEach(line => {
+        const rect = line.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          line.classList.add('visible');
+        }
+      });
+      const rectQ = question.getBoundingClientRect();
+      if (rectQ.top < window.innerHeight - 50) {
+        question.classList.add('visible');
+      }
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Add stars
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('stars');
+      star.style.top = Math.random() * window.innerHeight + 'px';
+      star.style.left = Math.random() * window.innerWidth + 'px';
+      document.body.appendChild(star);
+    }
+
+    // Shooting stars
+    function createShootingStar() {
+      const star = document.createElement('div');
+      star.classList.add('shooting-star');
+      star.style.top = Math.random() * window.innerHeight / 2 + 'px';
+      star.style.left = '-100px';
+      document.body.appendChild(star);
+
+      let pos = -100;
+      let opacity = 1;
+      const interval = setInterval(() => {
+        pos += 20;
+        star.style.left = pos + 'px';
+        star.style.opacity = opacity;
+        opacity -= 0.05;
+        if (pos > window.innerWidth || opacity <= 0) {
+          clearInterval(interval);
+          star.remove();
+        }
+      }, 50);
+    }
+    setInterval(createShootingStar, 5000);
+
+    // Proposal response with dialogue
+    const dialogueBox = document.getElementById('dialogueBox');
+    function sayYes() {
+      dialogueBox.textContent = "💖 You've made me the happiest! Held beyond time, together. 💖";
+    }
+    function sayNo() {
+      dialogueBox.textContent = "Please... my love, reconsider 💕 You are my universe...";
+      setTimeout(() => {
+        dialogueBox.textContent += " Will you say 'Yes'? 🌸";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
